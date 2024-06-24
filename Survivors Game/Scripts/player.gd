@@ -23,6 +23,11 @@ func _physics_process(delta):
 		sprite.flip_h = true
 	elif velocity.x > 0:
 		sprite.flip_h = false
+		
+	if velocity.x != 0 || velocity.y != 0:
+		sprite.play("Run")
+	else:
+		sprite.play("Idle")
 
 	move_and_slide()
 

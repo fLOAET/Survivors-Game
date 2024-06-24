@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cjg63fhgj7qa3"]
+[gd_scene load_steps=34 format=3 uid="uid://cjg63fhgj7qa3"]
 
 [ext_resource type="Texture2D" uid="uid://dowv7kahwsx7v" path="res://Sprites/Skeleton/Skeleton Dead.png" id="1_kfv44"]
 [ext_resource type="Texture2D" uid="uid://bjoutgqab7ikq" path="res://Sprites/Skeleton/Skeleton Walk.png" id="2_wj2fg"]
@@ -215,13 +215,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjfqy"]
 size = Vector2(4.79249, 9.99507)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnn5b"]
+size = Vector2(13, 25)
+
 [node name="EnemySkeleton" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_egrqh")
 animation = &"Walking"
 autoplay = "Walking"
-frame_progress = 0.256888
+frame_progress = 0.229559
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.5, 4.5)
@@ -230,5 +235,11 @@ scale = Vector2(2.71257, 2.50123)
 shape = SubResource("RectangleShape2D_pjfqy")
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-3.5, 4.5)
+shape = SubResource("RectangleShape2D_rnn5b")
+
+[node name="Damage Timer" type="Timer" parent="HurtBox"]
+wait_time = 0.5
