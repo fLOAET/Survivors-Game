@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://cavrp6rhef3vd"]
+[gd_scene load_steps=31 format=3 uid="uid://cavrp6rhef3vd"]
 
-[ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/AnimationSheet_Character.png" id="1_8tbmq"]
+[ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_8tbmq"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_8v5pp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njvqp"]
 atlas = ExtResource("1_8tbmq")
@@ -212,14 +213,23 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gxds"]
+size = Vector2(16, 27)
+
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8v5pp")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x6ere")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.455995
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_0gxds")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_x6ere")
-animation = &"Run"
-autoplay = "Idle"
-frame_progress = 0.428912
+[node name="Shuriken Timer" type="Timer" parent="."]
+autostart = true
 
-[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Shuriken Timer" to="." method="_on_shuriken_timer_timeout"]
