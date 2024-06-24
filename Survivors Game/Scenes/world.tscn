@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://csuc472vjoy8i"]
+[gd_scene load_steps=3 format=3 uid="uid://csuc472vjoy8i"]
 
 [ext_resource type="PackedScene" uid="uid://cavrp6rhef3vd" path="res://Scenes/player.tscn" id="1_br7je"]
+[ext_resource type="PackedScene" uid="uid://cjg63fhgj7qa3" path="res://Scenes/enemy_skeleton.tscn" id="2_xe66p"]
 
 [node name="World" type="Node2D"]
 
@@ -9,3 +10,6 @@ position = Vector2(1, -3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+
+[node name="EnemySkeleton" parent="." instance=ExtResource("2_xe66p")]
+position = Vector2(-194, 11)

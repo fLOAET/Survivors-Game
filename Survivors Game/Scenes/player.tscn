@@ -216,10 +216,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gxds"]
 size = Vector2(16, 27)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_8v5pp")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["Player"]]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x6ere")
 animation = &"Idle"
 autoplay = "Idle"

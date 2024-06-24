@@ -1,5 +1,6 @@
-[gd_scene load_steps=34 format=3 uid="uid://cjg63fhgj7qa3"]
+[gd_scene load_steps=35 format=3 uid="uid://cjg63fhgj7qa3"]
 
+[ext_resource type="Script" path="res://Scripts/enemy_skeleton.gd" id="1_j66yi"]
 [ext_resource type="Texture2D" uid="uid://dowv7kahwsx7v" path="res://Sprites/Skeleton/Skeleton Dead.png" id="1_kfv44"]
 [ext_resource type="Texture2D" uid="uid://bjoutgqab7ikq" path="res://Sprites/Skeleton/Skeleton Walk.png" id="2_wj2fg"]
 
@@ -221,12 +222,13 @@ size = Vector2(11, 23)
 [node name="EnemySkeleton" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_j66yi")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_egrqh")
-animation = &"Die"
+animation = &"Walking"
 autoplay = "Walking"
-frame_progress = 0.309157
+frame_progress = 0.019699
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.5, 4.5)
