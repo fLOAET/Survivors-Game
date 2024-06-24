@@ -43,7 +43,7 @@ _data = {
 "Spin": SubResource("Animation_rlfuk")
 }
 
-[node name="Shuriken" type="Area2D"]
+[node name="Shuriken" type="Area2D" groups=["Weapon"]]
 script = ExtResource("1_jdb8a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
