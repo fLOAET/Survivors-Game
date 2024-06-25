@@ -1,0 +1,125 @@
+[gd_scene load_steps=19 format=3 uid="uid://bqk68uo78a3vu"]
+
+[ext_resource type="Texture2D" uid="uid://dowv7kahwsx7v" path="res://Sprites/Skeleton/Skeleton Dead.png" id="1_iphg3"]
+[ext_resource type="Script" path="res://Scripts/skeleton_death.gd" id="2_d70rq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1qxa"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmxwe"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gho2r"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldl5v"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv1pr"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(132, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l7kb"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(165, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82qq7"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(198, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21xcn"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(231, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ej63"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(264, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rjln"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(297, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buoyd"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(330, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t5oq"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(363, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f5xh"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(396, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hbyp"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(429, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1swg"]
+atlas = ExtResource("1_iphg3")
+region = Rect2(462, 0, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_upjr5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1qxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmxwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gho2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldl5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv1pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l7kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82qq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21xcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ej63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rjln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buoyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t5oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f5xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hbyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1swg")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}]
+
+[node name="SkeletonDeath" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_upjr5")
+animation = &"Death"
+autoplay = "Death"
+script = ExtResource("2_d70rq")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

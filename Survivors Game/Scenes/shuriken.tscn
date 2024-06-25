@@ -45,6 +45,8 @@ _data = {
 }
 
 [node name="Shuriken" type="Area2D" groups=["Weapon"]]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_jdb8a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -59,3 +61,5 @@ libraries = {
 "": SubResource("AnimationLibrary_q84ny")
 }
 autoplay = "Spin"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
