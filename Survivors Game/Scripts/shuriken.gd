@@ -12,5 +12,6 @@ func _process(delta):
 	
 	
 func _on_body_entered(body):
-	if body.is_in_group("Enemy") and body.has_method("enemy_die"):
-		body.enemy_die()
+	if body.is_in_group("Enemy") and body.has_method("take_damage"):
+		body.take_damage(WeaponShuriken.shuriken_damage)
+		queue_free()

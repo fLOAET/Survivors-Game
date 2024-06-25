@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://cavrp6rhef3vd"]
+[gd_scene load_steps=35 format=3 uid="uid://cavrp6rhef3vd"]
 
 [ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_8tbmq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8v5pp"]
+[ext_resource type="Script" path="res://Scenes/UI.gd" id="3_1lmjp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njvqp"]
 atlas = ExtResource("1_8tbmq")
@@ -247,6 +248,7 @@ autostart = true
 shape = SubResource("CircleShape2D_rkcye")
 
 [node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_1lmjp")
 
 [node name="Control" type="Control" parent="UI"]
 layout_mode = 3
@@ -276,6 +278,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_2mj2o")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u31xg")
 
 [node name="LevelUpNotice" type="PanelContainer" parent="UI/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

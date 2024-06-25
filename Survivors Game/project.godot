@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Sprites/icon.png"
 
+[autoload]
+
+PlayerStats="*res://Singletons/player_stats.gd"
+WeaponShuriken="*res://Singletons/weapon_shuriken.gd"
+
 [input]
 
 move_left={
