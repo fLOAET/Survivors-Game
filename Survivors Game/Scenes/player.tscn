@@ -193,7 +193,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Teleport",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -210,7 +210,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gxds"]
@@ -221,9 +221,9 @@ script = ExtResource("1_8v5pp")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x6ere")
-animation = &"Teleport"
+animation = &"Walk"
 autoplay = "Idle"
-frame_progress = 0.383321
+frame_progress = 0.198148
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2.5)
