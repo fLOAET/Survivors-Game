@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hwdq75avv0cp" path="res://Sprites/Weapon/Shuriken/Shuriken.png" id="1_y47ij"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8b0j1"]
+radius = 5.0
 
 [sub_resource type="Animation" id="Animation_50483"]
 length = 0.001
@@ -50,6 +51,7 @@ script = ExtResource("1_jdb8a")
 shape = SubResource("CircleShape2D_8b0j1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_y47ij")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
