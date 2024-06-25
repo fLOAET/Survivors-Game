@@ -12,9 +12,8 @@ func _process(delta):
 			
 func collect():
 	collected = true
-	PlayerStats.add_experience(experience_value)
-
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
+		PlayerStats.add_experience(experience_value)
 		queue_free()

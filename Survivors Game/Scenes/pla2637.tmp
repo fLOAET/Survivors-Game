@@ -248,7 +248,6 @@ autostart = true
 shape = SubResource("CircleShape2D_rkcye")
 
 [node name="UI" type="CanvasLayer" parent="."]
-process_mode = 3
 script = ExtResource("3_1lmjp")
 
 [node name="Control" type="Control" parent="UI"]
@@ -320,7 +319,3 @@ text = "Level Up Shuriken"
 
 [connection signal="timeout" from="Shuriken Timer" to="." method="_on_shuriken_timer_timeout"]
 [connection signal="area_entered" from="PickupZone" to="." method="_on_pickup_zone_area_entered"]
-[connection signal="visibility_changed" from="UI/Control/LevelUpNotice" to="UI" method="_on_level_up_notice_visibility_changed"]
-[connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_health_level" to="UI" method="_on_btn_health_level_pressed"]
-[connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_speed_level" to="UI" method="_on_btn_speed_level_pressed"]
-[connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_shuriken_level" to="UI" method="_on_btn_shuriken_level_pressed"]

@@ -4,7 +4,7 @@ extends Node
 var player_level = 1
 var player_experience = 0
 var player_health = 100
-var play_max_health = 100
+var player_max_health = 100
 var next_level = 20
 
 signal level_up
@@ -25,4 +25,9 @@ func add_experience(val):
 		
 func damage_player(amount):
 	player_health -= amount
+	emit_signal("take_damage")
+	
+func add_max_health():
+	player_max_health += 20
+	player_health = player_max_health
 	emit_signal("take_damage")
