@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cavrp6rhef3vd"]
+[gd_scene load_steps=34 format=3 uid="uid://cavrp6rhef3vd"]
 
 [ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_8tbmq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8v5pp"]
@@ -216,6 +216,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gxds"]
 size = Vector2(16, 27)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkcye"]
+radius = 83.006
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mj2o"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u31xg"]
+bg_color = Color(0, 1, 0, 1)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_8v5pp")
 
@@ -232,4 +241,78 @@ shape = SubResource("RectangleShape2D_0gxds")
 [node name="Shuriken Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="PickupZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
+shape = SubResource("CircleShape2D_rkcye")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Experience" type="ProgressBar" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+
+[node name="Health" type="ProgressBar" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_2mj2o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u31xg")
+
+[node name="LevelUpNotice" type="PanelContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/LevelUpNotice"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/LevelUpNotice/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="btn_health_level" type="Button" parent="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Up Health"
+
+[node name="btn_speed_level" type="Button" parent="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Up Speed"
+
+[node name="btn_shuriken_level" type="Button" parent="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Up Shuriken"
+
 [connection signal="timeout" from="Shuriken Timer" to="." method="_on_shuriken_timer_timeout"]
+[connection signal="area_entered" from="PickupZone" to="." method="_on_pickup_zone_area_entered"]

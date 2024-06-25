@@ -40,3 +40,9 @@ func _on_shuriken_timer_timeout():
 	shuriken.global_position = global_position
 	shuriken.rotate(player_facing)
 	world.add_child(shuriken)
+
+
+func _on_pickup_zone_area_entered(area):
+	if area.is_in_group("Pickup"):
+		if area.has_method("collect"):
+			area.collect()

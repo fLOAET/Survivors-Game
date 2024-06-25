@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkicuw703wlbr"]
+
+[ext_resource type="Script" path="res://Scripts/experience_ball.gd" id="1_o6wp3"]
+[ext_resource type="Texture2D" uid="uid://bhqmw1sufcr7n" path="res://Sprites/Exp/Red EXP Ball.png" id="1_qfr2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_84b2t"]
+radius = 4.0
+
+[node name="ExperienceBall" type="Area2D" groups=["Pickup"]]
+script = ExtResource("1_o6wp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_84b2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_qfr2w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
