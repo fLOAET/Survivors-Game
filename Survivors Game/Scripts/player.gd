@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 80.0
 const ACCELERATION = 300.0
 const FRICTION = 300.0
+var player_facing = 0
 var direction = Vector2.ZERO
 @onready var sprite = $Sprite
 const SHURIKEN = preload("res://Scenes/shuriken.tscn")
@@ -31,9 +32,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+	if velocity.x != 0 || velocity.y != 0:
+		player_facing = direction.angle()
 
 func _on_shuriken_timer_timeout():
 	var shuriken = SHURIKEN.instantiate()
 	shuriken.global_position = global_position
-	shuriken.rotate(direction.angle())
+	shuriken.rotate(player_facing)
 	world.add_child(shuriken)
