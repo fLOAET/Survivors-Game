@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 80.0
 const ACCELERATION = 300.0
 const FRICTION = 300.0
 var direction = Vector2.ZERO
