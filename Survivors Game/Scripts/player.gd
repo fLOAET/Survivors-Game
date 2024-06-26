@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 80.0
 const ACCELERATION = 300.0
 const FRICTION = 300.0
+var dead = false
 var last_direction = 0
 var direction = Vector2.ZERO
 @onready var sprite = $Sprite
@@ -11,7 +12,7 @@ const SHURIKEN = preload("res://Scenes/shuriken.tscn")
 @onready var world = get_node('/root/World')
 const PLAYER_DEATH = preload("res://Scenes/player_death.tscn")
 
-func ready():
+func _ready():
 	PlayerStats.player_death.connect(player_dead)
 
 func _physics_process(delta):
@@ -51,8 +52,10 @@ func _on_pickup_zone_area_entered(area):
 
 func player_dead():
 	print("Dead")
-	queue_free()
-	var new_death = PLAYER_DEATH.instantiate()
-	new_death.global_position = global_position
-	add_sibling(new_death)
+	visible = false
+	if dead = false:
+		dead = true
+		var new_death = PLAYER_DEATH.instantiate()
+		new_death.global_position = global_position
+		add_sibling(new_death)
 	

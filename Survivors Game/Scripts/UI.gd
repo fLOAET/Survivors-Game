@@ -33,8 +33,9 @@ func _on_btn_health_level_pressed():
 	level_up_notice.visible = false
 
 func _on_btn_speed_level_pressed():
-	pass # Replace with function body.
+	level_up_notice.visible = false
 
 func _on_btn_shuriken_level_pressed():
 	WeaponShuriken.level_up_shuriken()
 	level_up_notice.visible = false
+	
