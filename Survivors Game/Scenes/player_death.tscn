@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://cobriibq72w0o"]
+
+[ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_hm4cu"]
+[ext_resource type="Script" path="res://Scripts/player_death.gd" id="2_8fjpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq5h5"]
+atlas = ExtResource("1_hm4cu")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsnpm"]
+atlas = ExtResource("1_hm4cu")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mtrv"]
+atlas = ExtResource("1_hm4cu")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7ast"]
+atlas = ExtResource("1_hm4cu")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myb07"]
+atlas = ExtResource("1_hm4cu")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us4cg"]
+atlas = ExtResource("1_hm4cu")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4x5h"]
+atlas = ExtResource("1_hm4cu")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwioh"]
+atlas = ExtResource("1_hm4cu")
+region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yb3pb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq5h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsnpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mtrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7ast")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myb07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us4cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4x5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwioh")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}]
+
+[node name="PlayerDeath" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_yb3pb")
+animation = &"Death"
+autoplay = "Death"
+script = ExtResource("2_8fjpm")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_8tbmq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8v5pp"]
-[ext_resource type="Script" path="res://Scenes/UI.gd" id="3_1lmjp"]
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="3_1lmjp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njvqp"]
 atlas = ExtResource("1_8tbmq")
@@ -136,7 +136,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lroh7")
 }],
 "loop": true,
-"name": &"Die",
+"name": &"Death",
 "speed": 10.0
 }, {
 "frames": [{
@@ -231,9 +231,8 @@ script = ExtResource("1_8v5pp")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x6ere")
-animation = &"Walk"
+animation = &"Death"
 autoplay = "Idle"
-frame_progress = 0.93803
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2.5)
@@ -277,6 +276,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_2mj2o")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u31xg")
+value = 100.0
 
 [node name="LevelUpNotice" type="PanelContainer" parent="UI/Control"]
 visible = false

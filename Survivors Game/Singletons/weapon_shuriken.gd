@@ -33,7 +33,7 @@ func level_up_shuriken():
 			shuriken_knockback = 20
 		5:
 			shuriken_damage = 15
-			shuriken_speed = 400
+			shuriken_speed = 500
 			shuriken_projectiles = 2
 			shuriken_time = 0.5
 			shuriken_knockback = 20
