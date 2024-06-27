@@ -242,7 +242,7 @@ shape = SubResource("RectangleShape2D_0gxds")
 autostart = true
 
 [node name="ShurikenProjectileTimer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.1
 
 [node name="PickupZone" type="Area2D" parent="."]
 

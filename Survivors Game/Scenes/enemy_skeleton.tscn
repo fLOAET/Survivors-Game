@@ -102,8 +102,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjfqy"]
-size = Vector2(4.05519, 9.19547)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1do1g"]
+radius = 1.65894
+height = 8.39587
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnn5b"]
 size = Vector2(11, 23)
@@ -123,7 +124,7 @@ frame_progress = 0.959839
 position = Vector2(-3.5, 4.5)
 rotation = -3.14159
 scale = Vector2(2.71257, 2.50123)
-shape = SubResource("RectangleShape2D_pjfqy")
+shape = SubResource("CapsuleShape2D_1do1g")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 0

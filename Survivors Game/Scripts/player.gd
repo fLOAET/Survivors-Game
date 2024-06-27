@@ -21,7 +21,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
-	if direction:
+	if dead == false:
 		velocity = velocity.move_toward(direction * SPEED, ACCELERATION)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
@@ -42,14 +42,15 @@ func _physics_process(delta):
 		last_direction = direction.angle()
 
 func _on_shuriken_cooldown_timeout():
-	shuriken_cooldown.stop()
 	var projectiles = 2
 	var spawned_projectiles = 0
 	while spawned_projectiles < projectiles:
 		spawned_projectiles = spawned_projectiles + 1
-		shuriken_projectile_timer.start()
-		print("test")
-	shuriken_cooldown.start()
+		var shuriken = SHURIKEN.instantiate()
+		shuriken.global_position = global_position
+		shuriken.rotate(last_direction)
+		world.add_child(shuriken)
+		await get_tree().create_timer(0.05).timeout
 
 func _on_shuriken_projectile_timer_timeout():
 	var shuriken = SHURIKEN.instantiate()
