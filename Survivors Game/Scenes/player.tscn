@@ -238,8 +238,11 @@ autoplay = "Idle"
 position = Vector2(-1, 2.5)
 shape = SubResource("RectangleShape2D_0gxds")
 
-[node name="Shuriken Timer" type="Timer" parent="."]
+[node name="ShurikenCooldown" type="Timer" parent="."]
 autostart = true
+
+[node name="ShurikenProjectileTimer" type="Timer" parent="."]
+wait_time = 0.25
 
 [node name="PickupZone" type="Area2D" parent="."]
 
@@ -318,7 +321,8 @@ text = "Level Up Speed"
 layout_mode = 2
 text = "Level Up Shuriken"
 
-[connection signal="timeout" from="Shuriken Timer" to="." method="_on_shuriken_timer_timeout"]
+[connection signal="timeout" from="ShurikenCooldown" to="." method="_on_shuriken_cooldown_timeout"]
+[connection signal="timeout" from="ShurikenProjectileTimer" to="." method="_on_shuriken_projectile_timer_timeout"]
 [connection signal="area_entered" from="PickupZone" to="." method="_on_pickup_zone_area_entered"]
 [connection signal="visibility_changed" from="UI/Control/LevelUpNotice" to="UI" method="_on_level_up_notice_visibility_changed"]
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_health_level" to="UI" method="_on_btn_health_level_pressed"]

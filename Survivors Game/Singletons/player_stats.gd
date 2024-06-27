@@ -29,7 +29,6 @@ func damage_player(amount):
 	player_health -= amount
 	emit_signal("take_damage")
 	if player_health <= 0:
-		print("Health 0")
 		emit_signal("player_death")
 	
 func add_max_health():
