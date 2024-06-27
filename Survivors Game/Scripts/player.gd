@@ -53,7 +53,7 @@ func _on_pickup_zone_area_entered(area):
 func player_dead():
 	print("Dead")
 	visible = false
-	if dead = false:
+	if dead == false:
 		dead = true
 		var new_death = PLAYER_DEATH.instantiate()
 		new_death.global_position = global_position

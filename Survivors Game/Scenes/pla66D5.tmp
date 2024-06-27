@@ -1,0 +1,326 @@
+[gd_scene load_steps=35 format=3 uid="uid://cavrp6rhef3vd"]
+
+[ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_8tbmq"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_8v5pp"]
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="3_1lmjp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njvqp"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogi43"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6y1j"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miexp"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr40s"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hflo4"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km1lr"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lroh7"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y23f"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs3yn"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx70k"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq1wu"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt03k"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymykx"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvkh1"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38e8f"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrajn"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en6md"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05cje"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmb50"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at1sr"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h8ca"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3jjo"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7pgg"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlsi4"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi7aw"]
+atlas = ExtResource("1_8tbmq")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x6ere"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njvqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogi43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6y1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miexp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr40s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hflo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km1lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lroh7")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y23f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs3yn")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx70k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq1wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt03k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymykx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvkh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38e8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrajn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en6md")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05cje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmb50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at1sr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h8ca")
+}],
+"loop": true,
+"name": &"Teleport",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3jjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7pgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlsi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi7aw")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gxds"]
+size = Vector2(16, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkcye"]
+radius = 83.006
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mj2o"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u31xg"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_8v5pp")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x6ere")
+animation = &"Death"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_0gxds")
+
+[node name="Shuriken Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="PickupZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
+shape = SubResource("CircleShape2D_rkcye")
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("3_1lmjp")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Experience" type="ProgressBar" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+
+[node name="Health" type="ProgressBar" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_2mj2o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u31xg")
+value = 100.0
+
+[node name="LevelUpNotice" type="PanelContainer" parent="UI/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/LevelUpNotice"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/LevelUpNotice/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="btn_health_level" type="Button" parent="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Up Health"
+
+[node name="btn_speed_level" type="Button" parent="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Up Speed"
+
+[node name="btn_shuriken_level" type="Button" parent="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Up Shuriken"
+
+[connection signal="timeout" from="Shuriken Timer" to="." method="_on_shuriken_timer_timeout"]
+[connection signal="area_entered" from="PickupZone" to="." method="_on_pickup_zone_area_entered"]
+[connection signal="visibility_changed" from="UI/Control/LevelUpNotice" to="UI" method="_on_level_up_notice_visibility_changed"]
+[connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_health_level" to="UI" method="_on_btn_health_level_pressed"]
+[connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_speed_level" to="UI" method="_on_btn_speed_level_pressed"]
+[connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_shuriken_level" to="UI" method="_on_btn_shuriken_level_pressed"]
