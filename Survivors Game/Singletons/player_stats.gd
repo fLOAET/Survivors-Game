@@ -2,13 +2,15 @@ extends Node
 
 
 var player_level = 1
+var player_max_health = 100
+var player_speed = 80
 var player_experience = 0
 var player_health = 100
-var player_max_health = 100
 var next_level = 20
 
 signal level_up
 signal add_exp
+signal add_speed
 signal take_damage
 signal player_death
 
@@ -34,3 +36,7 @@ func add_max_health():
 	player_max_health += 20
 	player_health = player_max_health
 	emit_signal("take_damage")
+	
+func add_player_speed():
+	player_speed = player_speed + 10
+	emit_signal("add_speed")

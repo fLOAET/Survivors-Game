@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 80.0
+var SPEED = 80.0
 const ACCELERATION = 300.0
 const FRICTION = 300.0
 var dead = false
@@ -16,6 +16,7 @@ const PLAYER_DEATH = preload("res://Scenes/player_death.tscn")
 
 func _ready():
 	PlayerStats.player_death.connect(player_dead)
+	PlayerStats.add_speed.connect(update_player_speed)
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -40,6 +41,10 @@ func _physics_process(delta):
 
 	if velocity.x != 0 || velocity.y != 0:
 		last_direction = direction.angle()
+		
+func update_player_speed():
+	SPEED = PlayerStats.player_speed
+	print("speed")
 
 func _on_shuriken_cooldown_timeout():
 	var projectiles = WeaponShuriken.shuriken_projectiles

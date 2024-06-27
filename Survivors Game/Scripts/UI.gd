@@ -33,6 +33,7 @@ func _on_btn_health_level_pressed():
 	level_up_notice.visible = false
 
 func _on_btn_speed_level_pressed():
+	PlayerStats.add_player_speed()
 	level_up_notice.visible = false
 
 func _on_btn_shuriken_level_pressed():
