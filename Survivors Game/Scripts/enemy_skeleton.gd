@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-
-const SPEED = 40.0
+var SPEED = 40.0
+var is_stunned = false
 @export var health = 10
 @export var damage = 5
 @onready var sprite = $Sprite
@@ -9,6 +9,7 @@ const SPEED = 40.0
 const SKELETON_DEATH = preload("res://Scenes/skeleton_death.tscn")
 const EXPERIENCE_BALL = preload("res://Scenes/experience_ball.tscn")
 @onready var damage_timer = $"HurtBox/DamageTimer"
+@onready var stun_timer = $StunTimer
 
 func check_collisions():
 	if not damage_timer.is_stopped():
@@ -34,6 +35,9 @@ func _physics_process(delta):
 
 func take_damage(dmg):
 	health -= dmg
+	sprite.play("Stunned")
+	self.set_physics_process(false)
+	stun_timer.start()
 	if health <= 0:
 		queue_free()
 		var new_death = SKELETON_DEATH.instantiate()
@@ -43,3 +47,7 @@ func take_damage(dmg):
 		var new_exp = EXPERIENCE_BALL.instantiate()
 		new_exp.global_position = global_position
 		add_sibling(new_exp)
+
+func _on_stun_timer_timeout():
+	sprite.play("Walking")
+	self.set_physics_process(true)

@@ -7,7 +7,7 @@ var shuriken_speed = 350
 var shuriken_projectiles = 1
 var shuriken_pierce = 1
 var shuriken_cooldown = 1
-var shuriken_knockback = 10
+var shuriken_stun = 10
 
 signal set_cooldown
 
@@ -23,7 +23,7 @@ func level_up_shuriken():
 			shuriken_pierce = 2
 		4:
 			shuriken_projectiles = 2
-			shuriken_knockback = 20
+			shuriken_stun = 20
 		5:
 			shuriken_damage = 15
 			shuriken_speed = 500
