@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 40.0
 @export var health = 10
-@export var damage = 50
+@export var damage = 5
 @onready var sprite = $Sprite
 @onready var player = $"../Player"
 const SKELETON_DEATH = preload("res://Scenes/skeleton_death.tscn")
