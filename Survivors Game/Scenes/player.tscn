@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://cavrp6rhef3vd"]
+[gd_scene load_steps=36 format=3 uid="uid://cavrp6rhef3vd"]
 
 [ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_8tbmq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8v5pp"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="3_1lmjp"]
+[ext_resource type="Script" path="res://Scripts/ShurikenCooldown.gd" id="3_l6vt6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njvqp"]
 atlas = ExtResource("1_8tbmq")
@@ -240,6 +241,7 @@ shape = SubResource("RectangleShape2D_0gxds")
 
 [node name="ShurikenCooldown" type="Timer" parent="."]
 autostart = true
+script = ExtResource("3_l6vt6")
 
 [node name="ShurikenProjectileTimer" type="Timer" parent="."]
 wait_time = 0.1

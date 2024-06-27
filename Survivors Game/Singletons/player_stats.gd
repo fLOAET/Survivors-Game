@@ -1,6 +1,5 @@
 extends Node
 
-const PLAYER = preload("res://Scenes/player.tscn")
 
 var player_level = 1
 var player_experience = 0

@@ -42,7 +42,7 @@ func _physics_process(delta):
 		last_direction = direction.angle()
 
 func _on_shuriken_cooldown_timeout():
-	var projectiles = 2
+	var projectiles = WeaponShuriken.shuriken_projectiles
 	var spawned_projectiles = 0
 	while spawned_projectiles < projectiles:
 		spawned_projectiles = spawned_projectiles + 1
@@ -51,13 +51,6 @@ func _on_shuriken_cooldown_timeout():
 		shuriken.rotate(last_direction)
 		world.add_child(shuriken)
 		await get_tree().create_timer(0.05).timeout
-
-func _on_shuriken_projectile_timer_timeout():
-	var shuriken = SHURIKEN.instantiate()
-	shuriken.global_position = global_position
-	shuriken.rotate(last_direction)
-	world.add_child(shuriken)
-	shuriken_projectile_timer.stop()
 
 func _on_pickup_zone_area_entered(area):
 	if area.is_in_group("Pickup"):

@@ -8,6 +8,8 @@ var shuriken_projectiles = 1
 var shuriken_cooldown = 1
 var shuriken_knockback = 10
 
+signal set_cooldown
+
 func level_up_shuriken():
 	shuriken_level += 1
 	match shuriken_level:
@@ -37,3 +39,5 @@ func level_up_shuriken():
 			shuriken_projectiles = 2
 			shuriken_cooldown = 0.5
 			shuriken_knockback = 20
+	
+	emit_signal("set_cooldown")
