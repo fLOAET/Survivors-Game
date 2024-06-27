@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 40.0
 var is_stunned = false
-@export var health = 10
+@export var health = 20
 @export var damage = 5
 @onready var sprite = $Sprite
 @onready var player = $"../Player"
