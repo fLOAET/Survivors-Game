@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://csuc472vjoy8i"]
+[gd_scene load_steps=4 format=3 uid="uid://csuc472vjoy8i"]
 
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_1efc3"]
 [ext_resource type="PackedScene" uid="uid://cavrp6rhef3vd" path="res://Scenes/player.tscn" id="1_br7je"]
 [ext_resource type="Script" path="res://Scripts/EnemySpawner.gd" id="2_uughd"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_1efc3")
 
 [node name="Player" parent="." instance=ExtResource("1_br7je")]
 position = Vector2(1, -3)

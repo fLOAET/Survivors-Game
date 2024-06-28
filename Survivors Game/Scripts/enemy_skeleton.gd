@@ -45,8 +45,8 @@ func take_damage(dmg):
 		add_sibling(new_death)
 		
 		var random_number = randf_range(1, 10)
-		random_number = random_number + PlayerStats.player_luck
-		if random_number >= 5:
+		var min_number = PlayerStats.player_luck
+		if random_number >= min_number:
 			var new_exp = EXPERIENCE_BALL.instantiate()
 			new_exp.global_position = global_position
 			add_sibling(new_exp)

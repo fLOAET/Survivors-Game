@@ -8,7 +8,6 @@ radius = 4.0
 
 [node name="ExperienceBall" type="Area2D" groups=["Pickup"]]
 script = ExtResource("1_o6wp3")
-experience_value = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_84b2t")

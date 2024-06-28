@@ -7,7 +7,7 @@ var player_health = 100
 var player_speed = 80
 var experience_value = 5
 var player_experience = 0
-var player_luck = 0
+var player_luck = 6
 var next_level = 10
 
 signal level_up
@@ -47,4 +47,14 @@ func add_experience_value():
 	experience_value = experience_value + 5
 	
 func add_luck():
-	player_luck = player_luck + 1
+	player_luck = player_luck - 1
+
+func restart():
+	player_level = 1
+	player_max_health = 100
+	player_health = 100
+	player_speed = 80
+	experience_value = 5
+	player_experience = 0
+	player_luck = 6
+	next_level = 10

@@ -38,3 +38,12 @@ func level_up_shuriken():
 
 	emit_signal("set_cooldown")
 	emit_signal("set_stun")
+	
+func restart():
+	shuriken_level = 1
+	shuriken_damage = 5
+	shuriken_speed = 350
+	shuriken_projectiles = 1
+	shuriken_pierce = 1
+	shuriken_cooldown = 1
+	shuriken_stun = 0.5

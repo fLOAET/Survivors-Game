@@ -17,6 +17,3 @@ func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		PlayerStats.add_experience()
 		queue_free()
-		
-func level_up_experience():
-	pass
