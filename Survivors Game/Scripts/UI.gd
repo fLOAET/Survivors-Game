@@ -40,3 +40,10 @@ func _on_btn_shuriken_level_pressed():
 	WeaponShuriken.level_up_shuriken()
 	level_up_notice.visible = false
 	
+func _on_btn_exp_level_pressed():
+	PlayerStats.add_experience_value()
+	level_up_notice.visible = false
+
+func _on_btn_luck_level_pressed():
+	PlayerStats.add_luck()
+	level_up_notice.visible = false

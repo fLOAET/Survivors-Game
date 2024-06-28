@@ -1,9 +1,9 @@
 extends Area2D
 
-@export var experience_value = 5
+
 var collected = false
 @onready var player = get_tree().get_first_node_in_group("Player")
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if collected:
@@ -15,5 +15,8 @@ func collect():
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		PlayerStats.add_experience(experience_value)
+		PlayerStats.add_experience()
 		queue_free()
+		
+func level_up_experience():
+	pass
