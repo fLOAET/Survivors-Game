@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/MainMenuUI.gd" id="1_8wek1"]
 
 [node name="MainMenu" type="Node2D"]
+process_mode = 3
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("1_8wek1")
