@@ -168,6 +168,7 @@ bg_color = Color(0, 1, 0, 1)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 top_level = true
+z_index = 5
 script = ExtResource("1_8v5pp")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -280,11 +281,25 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -150.0
-offset_top = -200.0
+offset_top = -33.0
 offset_right = 150.0
-offset_bottom = 200.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/DeathNotice"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/DeathNotice/MarginContainer"]
+layout_mode = 2
+
+[node name="btn_retry" type="Button" parent="UI/Control/DeathNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Retry"
+
+[node name="btn_main_menu" type="Button" parent="UI/Control/DeathNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
 
 [connection signal="timeout" from="ShurikenCooldown" to="." method="_on_shuriken_cooldown_timeout"]
 [connection signal="timeout" from="ShurikenProjectileTimer" to="." method="_on_shuriken_projectile_timer_timeout"]
@@ -296,3 +311,5 @@ grow_vertical = 2
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_exp_level" to="UI" method="_on_btn_exp_level_pressed"]
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_luck_level" to="UI" method="_on_btn_luck_level_pressed"]
 [connection signal="visibility_changed" from="UI/Control/DeathNotice" to="UI" method="_on_level_up_notice_visibility_changed"]
+[connection signal="pressed" from="UI/Control/DeathNotice/MarginContainer/VBoxContainer/btn_retry" to="UI" method="_on_btn_retry_pressed"]
+[connection signal="pressed" from="UI/Control/DeathNotice/MarginContainer/VBoxContainer/btn_main_menu" to="UI" method="_on_btn_main_menu_pressed"]

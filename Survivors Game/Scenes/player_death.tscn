@@ -68,6 +68,7 @@ animations = [{
 }]
 
 [node name="PlayerDeath" type="AnimatedSprite2D"]
+z_index = 5
 sprite_frames = SubResource("SpriteFrames_yb3pb")
 animation = &"Death"
 autoplay = "Death"
