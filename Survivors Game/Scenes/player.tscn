@@ -310,6 +310,5 @@ text = "Main Menu"
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_shuriken_level" to="UI" method="_on_btn_shuriken_level_pressed"]
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_exp_level" to="UI" method="_on_btn_exp_level_pressed"]
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_luck_level" to="UI" method="_on_btn_luck_level_pressed"]
-[connection signal="visibility_changed" from="UI/Control/DeathNotice" to="UI" method="_on_level_up_notice_visibility_changed"]
 [connection signal="pressed" from="UI/Control/DeathNotice/MarginContainer/VBoxContainer/btn_retry" to="UI" method="_on_btn_retry_pressed"]
 [connection signal="pressed" from="UI/Control/DeathNotice/MarginContainer/VBoxContainer/btn_main_menu" to="UI" method="_on_btn_main_menu_pressed"]
