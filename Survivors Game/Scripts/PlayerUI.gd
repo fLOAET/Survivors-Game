@@ -47,9 +47,3 @@ func _on_btn_exp_level_pressed():
 func _on_btn_luck_level_pressed():
 	PlayerStats.add_luck()
 	level_up_notice.visible = false
-
-func _on_btn_retry_pressed():
-	get_tree().reload_current_scene()
-
-func _on_btn_main_menu_pressed():
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
