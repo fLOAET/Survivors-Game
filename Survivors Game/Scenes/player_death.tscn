@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cobriibq72w0o"]
+[gd_scene load_steps=13 format=3 uid="uid://cobriibq72w0o"]
 
 [ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_hm4cu"]
 [ext_resource type="Script" path="res://Scripts/player_death.gd" id="2_8fjpm"]
+[ext_resource type="Script" path="res://Scripts/deathUI.gd" id="3_fy4kg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uq5h5"]
 atlas = ExtResource("1_hm4cu")
@@ -73,5 +74,54 @@ sprite_frames = SubResource("SpriteFrames_yb3pb")
 animation = &"Death"
 autoplay = "Death"
 script = ExtResource("2_8fjpm")
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("3_fy4kg")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DeathNotice" type="PanelContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/DeathNotice"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/DeathNotice/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="btn_restart" type="Button" parent="UI/Control/DeathNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="btn_main_menunu" type="Button" parent="UI/Control/DeathNotice/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
