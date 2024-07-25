@@ -1,6 +1,161 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7ljy3qb0gdfu"]
+[gd_scene load_steps=23 format=3 uid="uid://c7ljy3qb0gdfu"]
 
 [ext_resource type="Script" path="res://Scripts/aboutUI.gd" id="1_oecaq"]
+[ext_resource type="Script" path="res://Scripts/about_characters.gd" id="2_crgbh"]
+[ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="3_qbe6x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un27c"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaj3y"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2dji"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heukw"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n442c"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4ddu"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcliv"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c1n4"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tudc6"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yd1ju"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byifh"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggxts"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4moet"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybfrv"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o77ni"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp74m"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf1my"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlnay"]
+atlas = ExtResource("3_qbe6x")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lq73s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un27c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaj3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2dji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_heukw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n442c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4ddu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcliv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c1n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c1n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c1n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c1n4")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tudc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yd1ju")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byifh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggxts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4moet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybfrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o77ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp74m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf1my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlnay")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
 
 [node name="About" type="Node2D"]
 
@@ -47,7 +202,7 @@ offset_bottom = 116.0
 
 [node name="Dev" type="Button" parent="UI/Tabs/DevCategory"]
 layout_mode = 2
-text = "Dev"
+text = "About Dev"
 
 [node name="Why" type="Button" parent="UI/Tabs/DevCategory"]
 layout_mode = 2
@@ -93,7 +248,83 @@ text = "Placeholder"
 layout_mode = 3
 anchors_preset = 0
 
+[node name="Dev" type="Control" parent="UI/Panels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AboutDev" type="Label" parent="UI/Panels/Dev"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 150.0
+offset_right = 540.0
+offset_bottom = 173.0
+text = "Hi I'm Logan, I made this game :}"
+
+[node name="Why" type="Label" parent="UI/Panels/Dev"]
+visible = false
+layout_mode = 0
+offset_left = 500.0
+offset_top = 150.0
+offset_right = 752.0
+offset_bottom = 173.0
+text = "I made this for a school project"
+
+[node name="Characters" type="Control" parent="UI/Panels"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_crgbh")
+
+[node name="HoodedGuy" type="Control" parent="UI/Panels/Characters"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Credit" type="Label" parent="UI/Panels/Characters/HoodedGuy"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 150.0
+offset_right = 540.0
+offset_bottom = 173.0
+text = "Credit: Penzilla"
+
+[node name="hgSprite" type="AnimatedSprite2D" parent="UI/Panels/Characters/HoodedGuy"]
+position = Vector2(759, 311)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_lq73s")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.0791672
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Panels/Characters/HoodedGuy"]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 5.0
+offset_right = 1147.0
+offset_bottom = 36.0
+
+[node name="hgIdle" type="Button" parent="UI/Panels/Characters/HoodedGuy/HBoxContainer"]
+layout_mode = 2
+text = "Idle"
+
+[node name="hgRun" type="Button" parent="UI/Panels/Characters/HoodedGuy/HBoxContainer"]
+layout_mode = 2
+text = "Run"
+
+[node name="hgDeath" type="Button" parent="UI/Panels/Characters/HoodedGuy/HBoxContainer"]
+layout_mode = 2
+text = "Death"
+
 [connection signal="pressed" from="UI/Tabs/Categories/Dev" to="UI" method="_on_dev_pressed"]
 [connection signal="pressed" from="UI/Tabs/Categories/Characters" to="UI" method="_on_characters_pressed"]
 [connection signal="pressed" from="UI/Tabs/Categories/Pick-Ups" to="UI" method="_on_pick_ups_pressed"]
 [connection signal="pressed" from="UI/Tabs/Categories/Other" to="UI" method="_on_other_pressed"]
+[connection signal="pressed" from="UI/Tabs/DevCategory/Dev" to="UI" method="_on_dev_panel_pressed"]
+[connection signal="pressed" from="UI/Tabs/DevCategory/Why" to="UI" method="_on_why_pressed"]
+[connection signal="pressed" from="UI/Tabs/CharacterCategory/HoodedGuy" to="UI/Panels/Characters" method="_on_hooded_guy_pressed"]
+[connection signal="visibility_changed" from="UI/Panels/Characters/HoodedGuy" to="UI/Panels/Characters" method="_on_hooded_guy_visibility_changed"]
+[connection signal="pressed" from="UI/Panels/Characters/HoodedGuy/HBoxContainer/hgIdle" to="UI/Panels/Characters" method="_on_hg_idle_pressed"]
+[connection signal="pressed" from="UI/Panels/Characters/HoodedGuy/HBoxContainer/hgRun" to="UI/Panels/Characters" method="_on_hg_run_pressed"]
+[connection signal="pressed" from="UI/Panels/Characters/HoodedGuy/HBoxContainer/hgDeath" to="UI/Panels/Characters" method="_on_hg_death_pressed"]
