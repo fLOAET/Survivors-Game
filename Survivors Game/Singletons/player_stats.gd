@@ -40,7 +40,7 @@ func add_max_health():
 	emit_signal("take_damage")
 	
 func add_player_speed():
-	player_speed = player_speed + 10
+	player_speed = player_speed + 20
 	emit_signal("add_speed")
 
 func add_experience_value():
