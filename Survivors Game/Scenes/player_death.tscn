@@ -79,7 +79,8 @@ script = ExtResource("2_8fjpm")
 process_mode = 3
 script = ExtResource("3_fy4kg")
 
-[node name="Control" type="Control" parent="UI"]
+[node name="DeathNotice" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -89,7 +90,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DeathNotice" type="PanelContainer" parent="UI/Control"]
+[node name="Buttons" type="PanelContainer" parent="UI/DeathNotice"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -103,7 +104,7 @@ offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/Control/DeathNotice"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/DeathNotice/Buttons"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/margin_left = 10
@@ -111,19 +112,19 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/DeathNotice/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DeathNotice/Buttons/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="btn_restart" type="Button" parent="UI/Control/DeathNotice/MarginContainer/VBoxContainer"]
+[node name="btn_restart" type="Button" parent="UI/DeathNotice/Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Restart"
 
-[node name="btn_main_menunu" type="Button" parent="UI/Control/DeathNotice/MarginContainer/VBoxContainer"]
+[node name="btn_main_menunu" type="Button" parent="UI/DeathNotice/Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
 
-[node name="Label" type="Label" parent="UI/Control"]
+[node name="Label" type="Label" parent="UI/DeathNotice"]
 layout_mode = 2
 offset_left = -150.0
 offset_top = -200.0
@@ -133,5 +134,5 @@ text = "Game Over!"
 horizontal_alignment = 1
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
-[connection signal="pressed" from="UI/Control/DeathNotice/MarginContainer/VBoxContainer/btn_restart" to="UI" method="_on_btn_restart_pressed"]
-[connection signal="pressed" from="UI/Control/DeathNotice/MarginContainer/VBoxContainer/btn_main_menunu" to="UI" method="_on_btn_main_menunu_pressed"]
+[connection signal="pressed" from="UI/DeathNotice/Buttons/MarginContainer/VBoxContainer/btn_restart" to="UI" method="_on_btn_restart_pressed"]
+[connection signal="pressed" from="UI/DeathNotice/Buttons/MarginContainer/VBoxContainer/btn_main_menunu" to="UI" method="_on_btn_main_menunu_pressed"]
