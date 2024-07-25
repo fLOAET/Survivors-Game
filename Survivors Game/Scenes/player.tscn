@@ -273,6 +273,58 @@ text = "Level Up Experience"
 layout_mode = 2
 text = "Level Up Luck"
 
+[node name="Pause" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" type="VBoxContainer" parent="UI/Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -33.0
+offset_right = 48.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="UI/Pause/PauseMenu"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MainMenu" type="Button" parent="UI/Pause/PauseMenu"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="UI/Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -170.0
+offset_right = 28.5
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Paused"
+
 [connection signal="timeout" from="ShurikenCooldown" to="." method="_on_shuriken_cooldown_timeout"]
 [connection signal="timeout" from="ShurikenProjectileTimer" to="." method="_on_shuriken_projectile_timer_timeout"]
 [connection signal="area_entered" from="PickupZone" to="." method="_on_pickup_zone_area_entered"]
@@ -282,3 +334,5 @@ text = "Level Up Luck"
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_shuriken_level" to="UI" method="_on_btn_shuriken_level_pressed"]
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_exp_level" to="UI" method="_on_btn_exp_level_pressed"]
 [connection signal="pressed" from="UI/Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_luck_level" to="UI" method="_on_btn_luck_level_pressed"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/Resume" to="UI" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/MainMenu" to="UI" method="_on_main_menu_pressed"]

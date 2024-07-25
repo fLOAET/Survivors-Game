@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var health = $Control/Health
 @onready var level_up_notice = $Control/LevelUpNotice
 @onready var btn_shuriken_level = $Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_shuriken_level
+@onready var pause = $Pause
 
 func _ready():
 	PlayerStats.level_up.connect(level_up)
@@ -52,3 +53,10 @@ func _on_btn_luck_level_pressed():
 
 func shuriken_maxed():
 	btn_shuriken_level.visible = false
+
+func _on_resume_pressed():
+	get_tree().paused = false
+	pause.visible = false
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

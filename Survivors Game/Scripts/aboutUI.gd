@@ -64,3 +64,6 @@ func _on_why_pressed():
 	active_panel.visible = false
 	active_panel = why
 	active_panel.visible = true
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

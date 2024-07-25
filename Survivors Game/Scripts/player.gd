@@ -13,6 +13,7 @@ const SHURIKEN = preload("res://Scenes/shuriken.tscn")
 const PLAYER_DEATH = preload("res://Scenes/player_death.tscn")
 @onready var shuriken_cooldown = $ShurikenCooldown
 @onready var shuriken_projectile_timer = $ShurikenProjectileTimer
+@onready var pause = $UI/Pause
 
 func _ready():
 	PlayerStats.player_death.connect(player_dead)
@@ -36,12 +37,16 @@ func _physics_process(delta):
 		sprite.play("Run")
 	else:
 		sprite.play("Idle")
-
-	move_and_slide()
-
+		
 	if velocity.x != 0 || velocity.y != 0:
 		last_direction = direction.angle()
-		
+	
+	if Input.is_action_pressed("Pause"):
+		get_tree().paused = true
+		pause.visible = true
+	
+	move_and_slide()
+
 func update_player_speed():
 	SPEED = PlayerStats.player_speed
 	print("speed")
