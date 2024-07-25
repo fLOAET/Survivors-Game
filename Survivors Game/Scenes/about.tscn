@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7ljy3qb0gdfu"]
 
-[ext_resource type="Script" path="res://Scenes/AboutUI.gd" id="1_oecaq"]
+[ext_resource type="Script" path="res://Scripts/aboutUI.gd" id="1_oecaq"]
 
 [node name="About" type="Node2D"]
 
@@ -55,6 +55,7 @@ text = "Why Did I Make This Game?"
 
 [node name="CharacterCategory" type="VBoxContainer" parent="UI/Tabs" groups=["AboutCategories"]]
 visible = false
+layout_mode = 0
 offset_left = 5.0
 offset_top = 50.0
 offset_right = 109.0
@@ -66,6 +67,7 @@ text = "Hooded Guy"
 
 [node name="PickUpsCategory" type="VBoxContainer" parent="UI/Tabs" groups=["AboutCategories"]]
 visible = false
+layout_mode = 0
 offset_left = 5.0
 offset_top = 50.0
 offset_right = 131.0
@@ -77,6 +79,7 @@ text = "Experience Ball"
 
 [node name="OtherCategory" type="VBoxContainer" parent="UI/Tabs" groups=["AboutCategories"]]
 visible = false
+layout_mode = 0
 offset_left = 5.0
 offset_top = 50.0
 offset_right = 105.0

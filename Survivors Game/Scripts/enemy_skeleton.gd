@@ -50,7 +50,6 @@ func take_damage(dmg):
 			var new_exp = EXPERIENCE_BALL.instantiate()
 			new_exp.global_position = global_position
 			add_sibling(new_exp)
-		
 
 func _on_stun_timer_timeout():
 	sprite.play("Walking")

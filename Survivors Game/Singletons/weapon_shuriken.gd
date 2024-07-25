@@ -2,6 +2,7 @@ extends Node
 
 
 var shuriken_level = 1
+var shuriken_max_level = 8
 var shuriken_damage = 5
 var shuriken_speed = 350
 var shuriken_projectiles = 1
@@ -11,9 +12,14 @@ var shuriken_stun = 0.5
 
 signal set_cooldown
 signal set_stun
+signal maxed
 
 func level_up_shuriken():
+	if shuriken_level == shuriken_max_level - 1:
+		emit_signal("maxed")
+	
 	shuriken_level += 1
+	print(shuriken_level)
 	match shuriken_level:
 		1:
 			pass
@@ -35,12 +41,13 @@ func level_up_shuriken():
 			shuriken_damage = 20 
 		8:
 			shuriken_cooldown = 0.25
-
+	
 	emit_signal("set_cooldown")
 	emit_signal("set_stun")
 	
 func restart():
 	shuriken_level = 1
+	shuriken_max_level = 8
 	shuriken_damage = 5
 	shuriken_speed = 350
 	shuriken_projectiles = 1
