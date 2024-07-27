@@ -49,7 +49,6 @@ func _physics_process(delta):
 
 func update_player_speed():
 	SPEED = PlayerStats.player_speed
-	print("speed")
 
 func _on_shuriken_cooldown_timeout():
 	var projectiles = WeaponShuriken.shuriken_projectiles

@@ -71,6 +71,10 @@ position = Vector2(-418, -250)
 position = Vector2(-209, -250)
 
 [node name="SpawnTimer" type="Timer" parent="Camera/EnemySpawner"]
+wait_time = 5.0
 autostart = true
 
+[node name="TimerChange" type="Timer" parent="Camera/EnemySpawner"]
+
 [connection signal="timeout" from="Camera/EnemySpawner/SpawnTimer" to="Camera/EnemySpawner" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Camera/EnemySpawner/TimerChange" to="Camera/EnemySpawner" method="_on_timer_change_timeout"]

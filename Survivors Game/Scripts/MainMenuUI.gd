@@ -12,7 +12,6 @@ func _process(delta):
 	pass
 
 func _on_btn_play_pressed():
-	print("test")
 	get_tree().change_scene_to_file("res://Scenes/world.tscn")
 
 func _on_btn_options_pressed():

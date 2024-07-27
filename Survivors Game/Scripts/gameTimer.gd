@@ -4,7 +4,7 @@ extends Panel
 var time = 0
 var minutes = 0
 var seconds = 0
-@onready var timer = $Timer
+@onready var timer = $"../Timer"
 
 func _process(delta):
 	time += delta
