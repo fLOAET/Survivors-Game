@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cavrp6rhef3vd"]
+[gd_scene load_steps=29 format=3 uid="uid://cavrp6rhef3vd"]
 
 [ext_resource type="Texture2D" uid="uid://cfn1bnekcwn6c" path="res://Sprites/Player/AnimationSheet_Character.png" id="1_8tbmq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8v5pp"]
 [ext_resource type="Script" path="res://Scripts/ShurikenCooldown.gd" id="3_l6vt6"]
 [ext_resource type="Script" path="res://Scripts/PlayerUI.gd" id="4_j5jyi"]
+[ext_resource type="Script" path="res://Scenes/TimerLabel.gd" id="5_ge6tc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0y23f"]
 atlas = ExtResource("1_8tbmq")
@@ -324,6 +325,28 @@ offset_bottom = -147.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Paused"
+
+[node name="Timer" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TimerLabel" type="Label" parent="UI/Timer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 50.0
+offset_right = 20.0
+offset_bottom = 73.0
+grow_horizontal = 2
+script = ExtResource("5_ge6tc")
 
 [connection signal="timeout" from="ShurikenCooldown" to="." method="_on_shuriken_cooldown_timeout"]
 [connection signal="timeout" from="ShurikenProjectileTimer" to="." method="_on_shuriken_projectile_timer_timeout"]
