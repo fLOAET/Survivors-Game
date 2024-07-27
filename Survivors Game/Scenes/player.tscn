@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8v5pp"]
 [ext_resource type="Script" path="res://Scripts/ShurikenCooldown.gd" id="3_l6vt6"]
 [ext_resource type="Script" path="res://Scripts/PlayerUI.gd" id="4_j5jyi"]
-[ext_resource type="Script" path="res://Scenes/TimerLabel.gd" id="5_ge6tc"]
+[ext_resource type="Script" path="res://Scripts/gameTimer.gd" id="5_5neaf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0y23f"]
 atlas = ExtResource("1_8tbmq")
@@ -336,17 +336,29 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="TimerLabel" type="Label" parent="UI/Timer"]
+[node name="Panel" type="Panel" parent="UI/Timer"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = 50.0
-offset_right = 20.0
-offset_bottom = 73.0
+offset_left = -25.0
+offset_top = 32.0
+offset_right = 25.0
+offset_bottom = 57.0
 grow_horizontal = 2
-script = ExtResource("5_ge6tc")
+script = ExtResource("5_5neaf")
+
+[node name="Timer" type="Label" parent="UI/Timer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_top = 32.0
+offset_right = 20.5
+offset_bottom = 55.0
+grow_horizontal = 2
+text = "00:00"
 
 [connection signal="timeout" from="ShurikenCooldown" to="." method="_on_shuriken_cooldown_timeout"]
 [connection signal="timeout" from="ShurikenProjectileTimer" to="." method="_on_shuriken_projectile_timer_timeout"]
