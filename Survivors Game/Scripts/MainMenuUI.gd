@@ -3,9 +3,15 @@ extends CanvasLayer
 
 @onready var main_menu = $".."
 const WORLD = preload("res://Scenes/world.tscn")
+@onready var play = $Control/VBoxContainer/Play
+@onready var options = $Control/VBoxContainer/Options
+@onready var about = $Control/VBoxContainer/About
+@onready var quit = $Control/VBoxContainer/Quit
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = false
+	play.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

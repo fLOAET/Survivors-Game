@@ -11,4 +11,3 @@ func _process(delta):
 	seconds = fmod(time, 60)
 	minutes = fmod(time, 3600) / 60
 	timer.text = "%02d:%02d" % [minutes, seconds]
-	
