@@ -9,12 +9,14 @@ extends CanvasLayer
 @onready var why = $Panels/Dev/Why
 @onready var dev = $Panels/Dev
 @onready var characters = $Panels/Characters
+@onready var devFocus = $Tabs/Categories/Dev
 
 var active_tab
 var active_panel_tab
 var active_panel 
 
 func _ready():
+	devFocus.grab_focus()
 	active_tab = dev_category
 	active_panel_tab = dev
 	active_panel = about_dev

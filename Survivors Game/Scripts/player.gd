@@ -14,6 +14,7 @@ const PLAYER_DEATH = preload("res://Scenes/player_death.tscn")
 @onready var shuriken_cooldown = $ShurikenCooldown
 @onready var shuriken_projectile_timer = $ShurikenProjectileTimer
 @onready var pause = $UI/Pause
+@onready var resume = $UI/Pause/PauseMenu/Resume
 
 func _ready():
 	PlayerStats.player_death.connect(player_dead)
@@ -44,6 +45,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Pause"):
 		get_tree().paused = true
 		pause.visible = true
+		resume.grab_focus()
 	
 	move_and_slide()
 
