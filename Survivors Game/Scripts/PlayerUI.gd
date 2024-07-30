@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var level_up_notice = $Control/LevelUpNotice
 @onready var btn_shuriken_level = $Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_shuriken_level
 @onready var pause = $Pause
+@onready var btn_health_level = $Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_health_level
 
 func _ready():
 	PlayerStats.level_up.connect(level_up)
@@ -28,6 +29,7 @@ func update_health():
 func _on_level_up_notice_visibility_changed():
 	if level_up_notice.visible == true:
 		get_tree().paused = true
+		btn_health_level.grab_focus()
 	else:
 		get_tree().paused = false
 
