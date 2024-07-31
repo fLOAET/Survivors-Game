@@ -20,54 +20,54 @@ zoom = Vector2(1.5, 1.5)
 [node name="EnemySpawner" type="Node2D" parent="Camera"]
 script = ExtResource("2_uughd")
 
-[node name="SpwanPoints" type="Node2D" parent="Camera/EnemySpawner"]
+[node name="SpawnPoints" type="Node2D" parent="Camera/EnemySpawner"]
 
-[node name="SpawnPoint1" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint1" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(0, -250)
 
-[node name="SpawnPoint2" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint2" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(209, -250)
 
-[node name="SpawnPoint3" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint3" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(418, -250)
 
-[node name="SpawnPoint4" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint4" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(418, -125)
 
-[node name="SpawnPoint5" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint5" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(418, 0)
 
-[node name="SpawnPoint6" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint6" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(418, 125)
 
-[node name="SpawnPoint7" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint7" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(418, 250)
 
-[node name="SpawnPoint8" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint8" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(209, 250)
 
-[node name="SpawnPoint9" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint9" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(0, 250)
 
-[node name="SpawnPoint10" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint10" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(-209, 250)
 
-[node name="SpawnPoint11" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint11" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(-418, 250)
 
-[node name="SpawnPoint12" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint12" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(-418, 125)
 
-[node name="SpawnPoint13" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint13" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(-418, 0)
 
-[node name="SpawnPoint14" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint14" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(-418, -125)
 
-[node name="SpawnPoint15" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint15" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(-418, -250)
 
-[node name="SpawnPoint16" type="Marker2D" parent="Camera/EnemySpawner/SpwanPoints"]
+[node name="SpawnPoint16" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(-209, -250)
 
 [node name="SpawnTimer" type="Timer" parent="Camera/EnemySpawner"]
