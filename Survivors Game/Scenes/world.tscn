@@ -70,12 +70,10 @@ position = Vector2(-418, -250)
 [node name="SpawnPoint16" type="Marker2D" parent="Camera/EnemySpawner/SpawnPoints"]
 position = Vector2(-209, -250)
 
-[node name="SpawnTimer" type="Timer" parent="Camera/EnemySpawner"]
+[node name="SkeletonSpawnTimer" type="Timer" parent="Camera/EnemySpawner"]
 wait_time = 5.0
 autostart = true
 
-[node name="TimerChange" type="Timer" parent="Camera/EnemySpawner"]
-one_shot = true
+[node name="BossTimer" type="Timer" parent="Camera/EnemySpawner"]
 
-[connection signal="timeout" from="Camera/EnemySpawner/SpawnTimer" to="Camera/EnemySpawner" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Camera/EnemySpawner/TimerChange" to="Camera/EnemySpawner" method="_on_timer_change_timeout"]
+[connection signal="timeout" from="Camera/EnemySpawner/SkeletonSpawnTimer" to="Camera/EnemySpawner" method="_on_skeleton_spawn_timer_timeout"]
