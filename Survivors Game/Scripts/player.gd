@@ -84,7 +84,7 @@ func _on_shuriken_cooldown_timeout():
 func _on_pickup_zone_area_entered(area):
 	#Checks if the area enetred is in the group Pickup, if it is, execute code
 	if area.is_in_group("Pickup"):
-		#Checks if the there is a fucntion names collect, then calls that function
+		#Checks if the there is a fucntion named collect, then calls that function
 		if area.has_method("collect"):
 			area.collect()
 

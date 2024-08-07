@@ -8,6 +8,7 @@ extends Node2D
 const ENEMY_SKELETON = preload("res://Scenes/enemy_skeleton.tscn")
 
 @onready var boss_timer = $BossTimer
+const BOSS = preload("res://Scenes/boss.tscn")
 
 func _ready():
 	await get_tree().create_timer(0.01).timeout
@@ -25,3 +26,9 @@ func _on_skeleton_spawn_timer_timeout():
 	spawn_skeleton()
 	if skeleton_spawn_timer.wait_time > 0.6:
 		skeleton_spawn_timer.wait_time -= 0.1
+
+func _on_boss_timer_timeout():
+	var enemy = BOSS.instantiate()
+	var spawn_point = spawn_points.pick_random()
+	enemy.global_position = spawn_point.global_position
+	world.add_child(enemy)
