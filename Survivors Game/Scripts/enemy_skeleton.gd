@@ -44,12 +44,9 @@ func take_damage(dmg):
 		new_death.global_position = global_position
 		add_sibling(new_death)
 		
-		var random_number = randf_range(1, 10)
-		var min_number = PlayerStats.player_luck
-		if random_number >= min_number:
-			var new_exp = EXPERIENCE_BALL.instantiate()
-			new_exp.global_position = global_position
-			add_sibling(new_exp)
+		var new_exp = EXPERIENCE_BALL.instantiate()
+		new_exp.global_position = global_position
+		add_sibling(new_exp)
 
 func _on_stun_timer_timeout():
 	sprite.play("Walking")

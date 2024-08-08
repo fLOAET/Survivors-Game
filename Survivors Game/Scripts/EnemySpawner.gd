@@ -12,7 +12,6 @@ const BOSS = preload("res://Scenes/boss.tscn")
 
 func _ready():
 	await get_tree().create_timer(0.01).timeout
-	print("spawn")
 	spawn_skeleton()
 
 func spawn_skeleton():
@@ -22,7 +21,6 @@ func spawn_skeleton():
 	world.add_child(enemy)
 
 func _on_skeleton_spawn_timer_timeout():
-	print(skeleton_spawn_timer.wait_time)
 	spawn_skeleton()
 	if skeleton_spawn_timer.wait_time > 0.6:
 		skeleton_spawn_timer.wait_time -= 0.1

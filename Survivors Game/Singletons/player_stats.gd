@@ -18,7 +18,7 @@ signal player_death
 
 func level_up_player():
 	player_level += 1
-	next_level = next_level * 1.5
+	next_level = next_level * 1.25
 	player_experience = 0
 	emit_signal("level_up")
 
@@ -27,7 +27,7 @@ func add_experience():
 	emit_signal("add_exp")
 	if player_experience >= next_level:
 		level_up_player()
-		
+
 func damage_player(amount):
 	player_health -= amount
 	emit_signal("take_damage")
@@ -38,14 +38,16 @@ func add_max_health():
 	player_max_health += 20
 	player_health = player_max_health
 	emit_signal("take_damage")
-	
+
 func add_player_speed():
 	player_speed = player_speed + 20
 	emit_signal("add_speed")
+	print(player_speed)
 
 func add_experience_value():
-	experience_value = experience_value + 5
-	
+	experience_value = experience_value * 1.5
+	print(experience_value)
+
 func add_luck():
 	player_luck = player_luck - 1
 

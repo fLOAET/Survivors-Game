@@ -376,6 +376,8 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_2njff")
 animation = &"Death"
 autoplay = "Walking"
+frame = 15
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 16)
