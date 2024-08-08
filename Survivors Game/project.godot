@@ -19,6 +19,7 @@ config/icon="res://Sprites/icon.png"
 
 PlayerStats="*res://Singletons/player_stats.gd"
 WeaponShuriken="*res://Singletons/weapon_shuriken.gd"
+BossStats="*res://Singletons/boss_stats.gd"
 
 [input]
 
