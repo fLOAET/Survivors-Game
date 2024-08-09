@@ -7,12 +7,14 @@ extends CanvasLayer
 @onready var btn_shuriken_level = $Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_shuriken_level
 @onready var pause = $Pause
 @onready var btn_health_level = $Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_health_level
+@onready var btn_speed_level = $Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_speed_level
 
 func _ready():
 	PlayerStats.level_up.connect(level_up)
 	PlayerStats.take_damage.connect(update_health)
 	PlayerStats.add_exp.connect(update_exp)
-	WeaponShuriken.maxed.connect(shuriken_maxed)
+	WeaponShuriken.shuriken_maxed.connect(shuriken_maxed)
+	PlayerStats.speed_maxed.connect(speed_maxed)
 
 func level_up():
 	update_exp()
@@ -52,6 +54,9 @@ func _on_btn_exp_level_pressed():
 func _on_btn_luck_level_pressed():
 	PlayerStats.add_luck()
 	level_up_notice.visible = false
+
+func speed_maxed():
+	btn_speed_level.visible = false
 
 func shuriken_maxed():
 	btn_shuriken_level.visible = false

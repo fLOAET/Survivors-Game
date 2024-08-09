@@ -12,11 +12,11 @@ var shuriken_stun = 0.5
 
 signal set_cooldown
 signal set_stun
-signal maxed
+signal shuriken_maxed
 
 func level_up_shuriken():
 	if shuriken_level == shuriken_max_level - 1:
-		emit_signal("maxed")
+		emit_signal("shuriken_maxed")
 	
 	shuriken_level += 1
 	print(shuriken_level)

@@ -15,5 +15,5 @@ func collect():
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		PlayerStats.add_experience()
+		PlayerStats.add_red_experience()
 		queue_free()

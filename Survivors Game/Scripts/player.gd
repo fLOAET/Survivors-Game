@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #Creates variables for player movement, direction, and death
-var SPEED = 80.0
+var speed = PlayerStats.player_speed
 const ACCELERATION = 300.0
 const FRICTION = 300.0
 var direction = Vector2.ZERO
@@ -29,7 +29,7 @@ func _physics_process(delta):
 	#Get the input direction and handle the movement/deceleration
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
 	if dead == false:
-		velocity = velocity.move_toward(direction * SPEED, ACCELERATION)
+		velocity = velocity.move_toward(direction * speed, ACCELERATION)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 	
@@ -60,7 +60,7 @@ func _physics_process(delta):
 
 #Updates the player speed based on a value from the PlayerStats singleton
 func update_player_speed():
-	SPEED = PlayerStats.player_speed
+	speed = PlayerStats.player_speed
 
 #Runs the contained code when the connected timer goes off
 func _on_shuriken_cooldown_timeout():

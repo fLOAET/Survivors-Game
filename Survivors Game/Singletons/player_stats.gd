@@ -5,7 +5,12 @@ var player_level = 1
 var player_max_health = 100
 var player_health = 100
 var player_speed = 80
-var experience_value = 5
+var max_speed = 300
+var red_experience_value = 5
+var green_experience_value = 25
+var blue_experience_value = 100
+var experience_multiplier = 1
+var experience_value
 var player_experience = 0
 var player_luck = 6
 var next_level = 10
@@ -13,6 +18,7 @@ var next_level = 10
 signal level_up
 signal add_exp
 signal add_speed
+signal speed_maxed
 signal take_damage
 signal player_death
 
@@ -22,7 +28,22 @@ func level_up_player():
 	player_experience = 0
 	emit_signal("level_up")
 
-func add_experience():
+func add_red_experience():
+	experience_value = red_experience_value * experience_multiplier
+	player_experience += experience_value
+	emit_signal("add_exp")
+	if player_experience >= next_level:
+		level_up_player()
+
+func add_green_experience():
+	experience_value = green_experience_value * experience_multiplier
+	player_experience += experience_value
+	emit_signal("add_exp")
+	if player_experience >= next_level:
+		level_up_player()
+
+func add_blue_experience():
+	experience_value = blue_experience_value * experience_multiplier
 	player_experience += experience_value
 	emit_signal("add_exp")
 	if player_experience >= next_level:
@@ -43,10 +64,11 @@ func add_player_speed():
 	player_speed = player_speed + 20
 	emit_signal("add_speed")
 	print(player_speed)
+	if player_speed == max_speed:
+		emit_signal("speed_maxed")
 
 func add_experience_value():
-	experience_value = experience_value * 1.5
-	print(experience_value)
+	experience_multiplier = experience_multiplier * 1.5
 
 func add_luck():
 	player_luck = player_luck - 1
@@ -56,7 +78,10 @@ func restart():
 	player_max_health = 100
 	player_health = 100
 	player_speed = 80
-	experience_value = 5
+	red_experience_value = 5
+	green_experience_value = 25
+	blue_experience_value = 100
+	experience_multiplier = 1
 	player_experience = 0
 	player_luck = 6
 	next_level = 10
