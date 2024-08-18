@@ -41,6 +41,7 @@ func take_damage(dmg):
 	health -= dmg
 	self.set_physics_process(false)
 	if health <= 0:
+		write_boss_death()
 		sprite.play("Death")
 		is_dead = true
 	else:
@@ -51,9 +52,15 @@ func _on_stun_timer_timeout():
 	sprite.play("Walking")
 	self.set_physics_process(true)
 
-
 func _on_sprite_animation_finished():
 	queue_free()
 	var new_exp = EXPERIENCE_BALL.instantiate()
 	new_exp.global_position = global_position
 	add_sibling(new_exp)
+
+func write_boss_death():
+	var string = "boss dead"
+	var file = FileAccess.open("user://bosses_killed.txt", FileAccess.WRITE)
+	file.seek_end()
+	file.store_string(string)
+	print("test")

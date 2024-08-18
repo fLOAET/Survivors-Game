@@ -75,7 +75,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="BossTimer" type="Timer" parent="Camera/EnemySpawner"]
-wait_time = 60.0
+wait_time = 10.0
 autostart = true
 
 [connection signal="timeout" from="Camera/EnemySpawner/SkeletonSpawnTimer" to="Camera/EnemySpawner" method="_on_skeleton_spawn_timer_timeout"]
