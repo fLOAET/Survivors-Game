@@ -1,6 +1,6 @@
 extends Node
 
-
+#Setting player stats
 var player_level = 1
 var player_max_health = 100
 var player_health = 100
@@ -15,6 +15,7 @@ var player_experience = 0
 var player_luck = 6
 var next_level = 10
 
+#setting signals
 signal level_up
 signal add_exp
 signal add_speed
@@ -22,6 +23,7 @@ signal speed_maxed
 signal take_damage
 signal player_death
 
+#Functions for updating player stats
 func level_up_player():
 	player_level += 1
 	next_level = next_level * 1.25
@@ -73,6 +75,7 @@ func add_experience_value():
 func add_luck():
 	player_luck = player_luck - 1
 
+#Resets player stats on restart
 func restart():
 	player_level = 1
 	player_max_health = 100

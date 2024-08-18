@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-
+#Loading references for other scenes and scripts
 @onready var dev_category = $Tabs/DevCategory
 @onready var character_category = $Tabs/CharacterCategory
 @onready var pick_ups_category = $Tabs/PickUpsCategory
@@ -11,16 +11,19 @@ extends CanvasLayer
 @onready var characters = $Panels/Characters
 @onready var devFocus = $Tabs/Categories/Dev
 
+#Creating variables
 var active_tab
 var active_panel_tab
 var active_panel 
 
+#Setting variables and grabbing the first buttons focus on ready
 func _ready():
 	devFocus.grab_focus()
 	active_tab = dev_category
 	active_panel_tab = dev
 	active_panel = about_dev
 
+#Functions for when buttons are pressed
 func _on_dev_pressed():
 	active_tab.visible = false
 	active_tab = dev_category

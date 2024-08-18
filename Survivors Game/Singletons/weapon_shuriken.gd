@@ -1,6 +1,6 @@
 extends Node
 
-
+#Setting shuriken stats
 var shuriken_level = 1
 var shuriken_max_level = 8
 var shuriken_damage = 5
@@ -10,10 +10,12 @@ var shuriken_pierce = 1
 var shuriken_cooldown = 1
 var shuriken_stun = 0.5
 
+#setting signals
 signal set_cooldown
 signal set_stun
 signal shuriken_maxed
 
+#Function for leveling up shuriken
 func level_up_shuriken():
 	if shuriken_level == shuriken_max_level - 1:
 		emit_signal("shuriken_maxed")
@@ -44,7 +46,8 @@ func level_up_shuriken():
 	
 	emit_signal("set_cooldown")
 	emit_signal("set_stun")
-	
+
+#Resets stats on restart
 func restart():
 	shuriken_level = 1
 	shuriken_max_level = 8

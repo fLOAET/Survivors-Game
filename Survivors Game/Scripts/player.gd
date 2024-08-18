@@ -8,7 +8,7 @@ var direction = Vector2.ZERO
 var last_direction = 0
 var dead = false
 
-#Loading and references for other scenes and scripts
+#Loading references for other scenes and scripts
 const SHURIKEN = preload("res://Scenes/shuriken.tscn")
 const PLAYER_DEATH = preload("res://Scenes/player_death.tscn")
 @onready var sprite = $Sprite

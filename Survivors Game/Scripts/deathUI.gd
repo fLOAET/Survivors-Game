@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-
+#Called when buttons are pressed
 func _on_btn_restart_pressed():
 	get_tree().reload_current_scene()
 

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-
+#Loading references for other scenes and scripts
 @onready var experience = $Control/Experience
 @onready var health = $Control/Health
 @onready var level_up_notice = $Control/LevelUpNotice
@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var btn_health_level = $Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_health_level
 @onready var btn_speed_level = $Control/LevelUpNotice/MarginContainer/VBoxContainer/btn_speed_level
 
+#Connects signals on ready
 func _ready():
 	PlayerStats.level_up.connect(level_up)
 	PlayerStats.take_damage.connect(update_health)
@@ -16,6 +17,7 @@ func _ready():
 	WeaponShuriken.shuriken_maxed.connect(shuriken_maxed)
 	PlayerStats.speed_maxed.connect(speed_maxed)
 
+#Functions for buttons pressed, signals recieved and getting focus of a button when visibilty changed
 func level_up():
 	update_exp()
 	level_up_notice.visible = true
